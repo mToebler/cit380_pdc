@@ -1,7 +1,9 @@
 // get location
 var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-// replace 'hireus' with 'header'
-newURL = newURL.replace('hireus', 'header');
+// replace current_page with 'header'
+var page = newURL.substring(newURL.lastIndexOf('/')+1, newURL.indexOf('.html'));
+console.log(page);
+newURL = newURL.replace(page, 'header');
 console.log(newURL);
 
 function setHeader(hFile) {
