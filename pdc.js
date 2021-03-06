@@ -15,7 +15,7 @@ function setHeader(hFile) {
 }
 
 function setFooter(fFile) {
-   document.querySelector("header").innerHTML = fFile;
+   document.querySelector("footer").innerHTML = fFile;
 }
 
 document.addEventListener(
