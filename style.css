@@ -16,6 +16,12 @@ body p {
    margin: .25rem;
 }
 
+#consult_image {
+   float: left;
+   position: fixed;
+   left: 14%;
+}
+
 .pizzaz {
    font-variant: small-caps;
    padding: .5rem;
