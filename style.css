@@ -17,9 +17,17 @@ body p {
 }
 
 #consult_image {
-   float: left;
+   /* float: left;
    position: fixed;
-   left: 14%;
+   left: 14%;  */
+   color: brown;
+   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-variant: small-caps;
+
+}
+
+#consult_image img {
+   width: 6%;
 }
 
 .pizzaz {
