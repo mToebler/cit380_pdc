@@ -17,7 +17,8 @@ function setHeader(hFile) {
 function setFooter(fFile) {
    // sets the proper year in footer
    var curYear = new Date();
-   document.querySelector("footer").innerHTML = fFile.replace('$YEAR', curYear.getFullYear().toString());;
+   console.log(fFile.replace('$YEAR', curYear.getFullYear().toString()));
+   document.querySelector("footer").innerHTML = fFile.replace('$YEAR', curYear.getFullYear().toString());
 }
 
 document.addEventListener(
