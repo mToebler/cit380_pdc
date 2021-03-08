@@ -45,3 +45,16 @@ body img {
 .tiny, #footer {
    font-size: small;
 }
+
+#menu {
+   float: left;
+   position: absolute;
+   left: 1rem;
+   top: 0rem;
+}
+
+#menu>span {
+   color: brown;
+   font-size:30px;
+   cursor:pointer;
+}
