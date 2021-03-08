@@ -13,7 +13,7 @@ ul {
 }
 body p {
    font-size: xxx-large;
-   margin: .0rem;
+   margin: -.2rem;
 }
 
 #consult_image {
@@ -27,11 +27,11 @@ body p {
 }
 
 body img {
-   width: 17%;
+   width: 18%;
 }
 
 #consult_image img {
-   width: 4%;
+   width: 5%;
 }
 
 .pizzaz {
