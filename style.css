@@ -61,11 +61,32 @@ body img {
 }
 
 #netLog {
-   padding-left: 20%;
+   padding-left: 5%;
    border: 1px;
    border-color: dimgray;
-   background-color: linen;
+   background-color: dimgray;
    font-family: 'Courier New', Courier, monospace;
-   color: dimgray;
+   color: lightgray;
    text-align: left;
+   font-size: 1rem;
+   border-radius: 500px 12% / 20px 25em 30px 35em;
+   /* border-radius: 1px 10%; */
+   /* min-width: 120px; */
 }
+
+.parent {
+   display: flex;
+   align-items: flex-start;
+   flex-wrap: nowrap;
+   height: 250px;
+   }
+
+.child {
+   width: 25%;  
+   }
+
+   .favChild {
+      width: 50%;
+      min-width: 250px;      
+   }
+   

@@ -51,7 +51,7 @@ function logNetworkInfo() {
    changeLog('     saveData: ' + navigator.connection.saveData + '\n');
    
    // Add whitespace for readability
-   changeLog('');
+   //changeLog('');
  }
  
 
