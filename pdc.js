@@ -1,8 +1,10 @@
+let page = "";
+
 function getURL(neededPage) {
    // get location
    var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
    // replace current_page with 'header'
-   var page = newURL.substring(newURL.lastIndexOf('/') + 1, newURL.indexOf('.html'));
+   page = newURL.substring(newURL.lastIndexOf('/') + 1, newURL.indexOf('.html'));
    console.log(page);
    newURL = newURL.replace(page, neededPage);
    console.log(newURL);
@@ -21,6 +23,38 @@ function setFooter(fFile) {
    document.querySelector("footer").innerHTML = fFile.replace('$YEAR', curYear.getFullYear().toString());
 }
 
+function changeLog(addStr) {
+   let text = document.querySelector('netTest').innerText;
+   text += addStr;
+   document.querySelector('netTest').innerText = text;
+}
+// coutesy of GoogleChrome github repository
+function logNetworkInfo() {
+   // Network type that browser uses
+   changeLog('         type: ' + navigator.connection.type + '\n');
+ 
+   // Effective bandwidth estimate
+   changeLog('     downlink: ' + navigator.connection.downlink + ' Mb/s' + '\n');
+ 
+   // Effective round-trip time estimate
+   changeLog('          rtt: ' + navigator.connection.rtt + ' ms' + '\n');
+ 
+   // Upper bound on the downlink speed of the first network hop
+   changeLog('  downlinkMax: ' + navigator.connection.downlinkMax + ' Mb/s' + '\n');
+ 
+   // Effective connection type determined using a combination of recently
+   // observed rtt and downlink values: ' +
+   changeLog('effectiveType: ' + navigator.connection.effectiveType + '\n');
+   
+   // True if the user has requested a reduced data usage mode from the user
+   // agent.
+   changeLog('     saveData: ' + navigator.connection.saveData + '\n');
+   
+   // Add whitespace for readability
+   changeLog('');
+ }
+ 
+
 document.addEventListener(
    'DOMContentLoaded',
    () => {
@@ -38,6 +72,17 @@ document.addEventListener(
       };
       fReq.open('GET', getURL('footer'));
       fReq.send();
+
+      if(page == 'network_health') {
+         // run network diagnostics
+         navigator.connection
+         navigator.connection.addEventListener('change', logNetworkInfo);
+
+
+         logNetworkInfo();
+      }
+
+
 
       /// can't use es6+ here.
       // fetch("./header.html")

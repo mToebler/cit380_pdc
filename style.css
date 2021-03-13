@@ -59,3 +59,13 @@ body img {
    font-size:3rem;
    cursor:pointer;
 }
+
+#netLog {
+   padding-left: 20%;
+   border: 1px;
+   border-color: dimgray;
+   background-color: linen;
+   font-family: 'Courier New', Courier, monospace;
+   color: dimgray;
+   text-align: left;
+}
