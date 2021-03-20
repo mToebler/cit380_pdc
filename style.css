@@ -1,9 +1,24 @@
 /* CIT 380 Mark Tobler, Purnell Darrell for PD Constuling */
+
+/* colors
+#2a2aa5 blue
+#a52a2a brown
+#a5a52a pea
+*/
+:root {
+   --brown: #a52a2a;
+   --blue: #2a2aa5;
+   --pea: #a5a52a;
+}
+
 body {
    text-align: center;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 115%;
    transition: 350ms;
+   background-color: var(--blue);
+   color: var(--pea);
+
 }
 
 ul {
@@ -21,7 +36,7 @@ body p {
    /* float: left;
    position: fixed;
    left: 14%;  */
-   color: brown;
+   color: var(--brown);
    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
    font-variant: small-caps;
 
@@ -40,7 +55,7 @@ body img {
    padding: .5rem;
    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   color:brown;
+   color: var(--brown);
 }
 
 .tiny, #footer {
@@ -55,7 +70,7 @@ body img {
 }
 
 #menu>span {
-   color: brown;
+   color: var(--brown);
    font-size:3rem;
    cursor:pointer;
 }
@@ -78,7 +93,7 @@ body img {
    display: flex;
    align-items: flex-start;
    flex-wrap: nowrap;
-   height: 250px;
+   height: 215px;
    }
 
 .child {
@@ -90,3 +105,42 @@ body img {
       min-width: 250px;      
    }
    
+
+   @media screen and (max-width: 44em) {
+      nav[role="full-horizontal"] {
+        ul > li {
+          width: 100%;
+        }
+      }
+    }
+    
+   nav {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      height: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+   a {
+      text-decoration: none;
+      color: var(--brown);
+   }
+
+   .ul_container {
+      /* float: left; */
+      /* left: 2rem;
+      top: -1rem; */
+   }
+
+   .ul_container ul {      
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      list-style: none ;
+      font-size: .7rem;
+   }
+
+   .ul_container li {
+      min-width: 5rem;
+   }
