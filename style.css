@@ -6,9 +6,9 @@
 #a5a52a pea
 */
 :root {
-   --brown: #a52a2a;
+   --brown: #cc3838; /*#a52a2a*/
    --blue: #2a2aa5;
-   --pea: #a5a52a;
+   --pea: #cccc38; /*#a5a52a*/
 }
 
 body {
@@ -63,6 +63,7 @@ body img {
 }
 
 #menu {
+   display: none;
    float: left;
    position: absolute;
    left: 1rem;
@@ -128,19 +129,22 @@ body img {
    }
 
    .ul_container {
-      /* float: left; */
-      /* left: 2rem;
-      top: -1rem; */
+      float: left;
+      left: 2rem;
+      top: -1rem;
+      max-width: 7rem;
    }
 
    .ul_container ul {      
       display: flex;
       align-items: flex-start;
-      flex-wrap: nowrap;
+      /* flex-wrap: nowrap; */
+      flex-wrap: wrap;
       list-style: none ;
-      font-size: .7rem;
+      font-size: .6rem;
    }
 
    .ul_container li {
-      min-width: 5rem;
+      min-width: 4rem;
+      padding-top: 1rem;
    }
