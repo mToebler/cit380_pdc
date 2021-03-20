@@ -1,5 +1,8 @@
+// var to that stores page name
 let page = "";
 
+// helper function, returns the current url with a variable
+// string concated at the end
 function getURL(neededPage) {
    // get location
    var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
@@ -16,6 +19,7 @@ function setHeader(hFile) {
    document.querySelector("header").innerHTML = hFile;
 }
 
+// sets the footer
 function setFooter(fFile) {
    // sets the proper year in footer
    var curYear = new Date();
@@ -28,7 +32,9 @@ function changeLog(addStr) {
    text += addStr;
    document.querySelector('netTest').innerText = text;
 }
+
 // coutesy of GoogleChrome github repository
+// this spits out the info found within the navigator object
 function logNetworkInfo() {
    // Network type that browser uses
    changeLog('         type: ' + navigator.connection.type + '\n');
@@ -55,6 +61,7 @@ function logNetworkInfo() {
  }
  
 
+ // adds all the listeners needed in the page.
 document.addEventListener(
    'DOMContentLoaded',
    () => {
@@ -73,6 +80,7 @@ document.addEventListener(
       fReq.open('GET', getURL('footer'));
       fReq.send();
 
+      // if current page is network_health, runs the logNetworkInfo function
       if(page == 'network_health') {
          // run network diagnostics
          navigator.connection
