@@ -37,15 +37,33 @@ function toggleMenu(ev) {
    if(menuOpen) {
       document.querySelector('div.ul_container.nav').style.display = "none";
       menuDiv.innerHTML = "<span>&#9776;</span>";
-      menuOpen = false;
+      let adminLIs = document.querySelectorAll('.sub_menu li');
+      console.log('Mr. Operator!!', adminLIs);
+      adminLIs.forEach(element => {
+         console.log('Choo!', element);
+         element.style.display = "none";
+         menuOpen = false;
+      })
    } else {
       document.querySelector('div.ul_container.nav').style.display = "initial";      
       menuDiv.textContent = "x";
       menuDiv.addEventListener('click', toggleMenu);
       menuOpen = true;
    }
-   
+}
 
+function displayAdmin() {   
+   let adminLIs = document.querySelectorAll('.sub_menu li');
+   console.log('Mr. Operator!!', adminLIs);
+   adminLIs.forEach(element => {
+      console.log('Choo!', element);
+      element.style.display = "contents";
+      // element will be a collection of li
+      // for(eLi of element) {
+      //    console.log('Choo!', eLi);
+      //    eLi.style.display = "contents";
+      // }
+   });
 }
 
 function changeLog(addStr) {
