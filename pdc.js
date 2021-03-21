@@ -1,5 +1,6 @@
 // var to that stores page name
 let page = "";
+let menuOpen = false;
 
 // helper function, returns the current url with a variable
 // string concated at the end
@@ -17,6 +18,9 @@ function getURL(neededPage) {
 // To support older browsers, falling back to pure javascript
 function setHeader(hFile) {
    document.querySelector("header").innerHTML = hFile;
+   let menuDiv = document.querySelector('div.ul_container.nav');
+   menuDiv.style.display = "none";
+   document.querySelector('#menu').addEventListener('click', toggleMenu, false); 
 }
 
 // sets the footer
@@ -25,6 +29,23 @@ function setFooter(fFile) {
    var curYear = new Date();
    console.log(fFile.replace('$YEAR', curYear.getFullYear().toString()));
    document.querySelector("footer").innerHTML = fFile.replace('$YEAR', curYear.getFullYear().toString());
+   
+}
+
+function toggleMenu(ev) {
+   let menuDiv = document.querySelector('#menu');
+   if(menuOpen) {
+      document.querySelector('div.ul_container.nav').style.display = "none";
+      menuDiv.innerHTML = "<span>&#9776;</span>";
+      menuOpen = false;
+   } else {
+      document.querySelector('div.ul_container.nav').style.display = "initial";      
+      menuDiv.textContent = "x";
+      menuDiv.addEventListener('click', toggleMenu);
+      menuOpen = true;
+   }
+   
+
 }
 
 function changeLog(addStr) {
@@ -89,6 +110,9 @@ document.addEventListener(
 
          logNetworkInfo();
       }
+
+      
+
 
 
 

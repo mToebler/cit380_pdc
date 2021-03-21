@@ -64,7 +64,8 @@ body img {
 }
 
 #menu {
-   display: none;
+   /* display: none; */
+   cursor:pointer;
    float: left;
    position: absolute;
    left: 1rem;
