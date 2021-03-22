@@ -34,8 +34,10 @@ function setFooter(fFile) {
 
 function toggleMenu(ev) {
    let menuDiv = document.querySelector('#menu');
+   let menuNav = document.querySelector('div.ul_container.nav');
+   console.log('toggleMenu start:', menuNav);
    if(menuOpen) {
-      document.querySelector('div.ul_container.nav').style.display = "none";
+      menuNav.style.display = "none";
       menuDiv.innerHTML = "<span>&#9776;</span>";
       let adminLIs = document.querySelectorAll('.sub_menu li');
       console.log('Mr. Operator!!', adminLIs);
@@ -45,7 +47,8 @@ function toggleMenu(ev) {
          menuOpen = false;
       })
    } else {
-      document.querySelector('div.ul_container.nav').style.display = "initial";      
+      menuNav.style.display = "initial";
+      menuNav.style.zIndex = "100";
       menuDiv.textContent = "x";
       menuDiv.addEventListener('click', toggleMenu);
       menuOpen = true;
@@ -58,6 +61,7 @@ function displayAdmin() {
    adminLIs.forEach(element => {
       console.log('Choo!', element);
       element.style.display = "contents";
+      element.style.zIndex = "100";
       // element will be a collection of li
       // for(eLi of element) {
       //    console.log('Choo!', eLi);

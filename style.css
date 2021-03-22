@@ -127,6 +127,7 @@ nav {
    height: 20px;
    font-family: Arial, Helvetica, sans-serif;
    z-index: -1;
+   background-color: var(--blue);
 }
 
 a {
@@ -136,7 +137,7 @@ a {
 
 .ul_container {
    float: left;
-   left: 2rem;
+   left: .5rem;
    top: -1rem;
    max-width: 7rem;
 }
@@ -153,7 +154,6 @@ a {
 .ul_container li {
    min-width: 4rem;
    padding-top: 1rem;
-   z-index: auto;
 }
 
 .sub_menu li {
